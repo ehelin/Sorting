@@ -7,8 +7,8 @@
     <ProjectGuid>{0930C598-F541-49EB-95F3-194A0E3DC1C6}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Sorting</RootNamespace>
-    <AssemblyName>Sorting</AssemblyName>
+    <RootNamespace>Driver</RootNamespace>
+    <AssemblyName>Driver</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
