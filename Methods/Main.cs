@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using Methods.Bubble;
+using Methods.Quick;
 
 namespace Methods
 {
@@ -12,35 +13,22 @@ namespace Methods
     {  
         public void Run()
         {
-            RunBubbleSort();         
+            //RunBubbleSort(); 
+            RunQuickSort();         
         }
 
         private void RunBubbleSort()
         {
-            IList<int> numbersToSort = PopulateNumbers();
-            Bubble.Bubble b = new Bubble.Bubble(numbersToSort);
+            Bubble.Bubble b = new Bubble.Bubble();
             b.Run(true);
 
-            b = new Bubble.Bubble(numbersToSort);
+            b = new Bubble.Bubble();
             b.Run(false);
-        }   
-        
-        private IList<int> PopulateNumbers()
+        }           
+        private void RunQuickSort()
         {
-            IList<int> numbersToSort = new List<int>();
-
-            numbersToSort.Add(10);
-            numbersToSort.Add(1);
-            numbersToSort.Add(8);
-            numbersToSort.Add(6);
-            numbersToSort.Add(4);
-            numbersToSort.Add(2);
-            numbersToSort.Add(3);
-            numbersToSort.Add(5);
-            numbersToSort.Add(7);
-            numbersToSort.Add(9);
-
-            return numbersToSort;
-        }
+            Quick.Quick q = new Quick.Quick();
+            q.Run(true);
+        }          
     }
 }

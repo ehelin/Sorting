@@ -4,15 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using Methods.Shared;
+
 namespace Methods.Bubble
 {
-    public class Bubble
+    public class Bubble : Base
     {
-        private IList<int> numbersToSort = null;
-
-        public Bubble(IList<int> pNumbersToSort)
+        public Bubble()
         {
-            numbersToSort = pNumbersToSort;
+            numbersToSort = PopulateNumbers();
         }
 
         //This sort method compares each number next to the other and if it is greater (or less),
@@ -91,14 +91,6 @@ namespace Methods.Bubble
                     numbersToSort[ctr + 1] = curVal;
                 }
             }
-        }
-
-        private void DisplayNumbersToSort()
-        {            
-            foreach(int number in numbersToSort)
-                Console.WriteLine(number.ToString());
-
-            Console.WriteLine("");
         }
     }
 }
