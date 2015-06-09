@@ -13,7 +13,7 @@ namespace Methods
     {  
         public void Run()
         {
-            //RunBubbleSort(); 
+            //RunBubbleSort();  
             RunQuickSort();         
         }
 
