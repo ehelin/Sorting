@@ -18,7 +18,25 @@ namespace Methods.Shared
             Console.WriteLine("");
         }
         
-        protected IList<int> PopulateNumbers()
+        protected IList<int> PopulateNumbersDescending()
+        {
+            IList<int> numbersToSort = new List<int>();
+
+            numbersToSort.Add(10);
+            numbersToSort.Add(9);
+            numbersToSort.Add(8);
+            numbersToSort.Add(7);
+            numbersToSort.Add(6);
+            numbersToSort.Add(5);
+            numbersToSort.Add(4);
+            numbersToSort.Add(3);
+            numbersToSort.Add(2);
+            numbersToSort.Add(1);
+
+            return numbersToSort;
+        }
+        
+        protected IList<int> PopulateNumbersRandom()
         {
             IList<int> numbersToSort = new List<int>();
 

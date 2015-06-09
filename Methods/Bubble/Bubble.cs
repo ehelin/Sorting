@@ -12,7 +12,7 @@ namespace Methods.Bubble
     {
         public Bubble()
         {
-            numbersToSort = PopulateNumbers();
+            numbersToSort = PopulateNumbersRandom();
         }
 
         //This sort method compares each number next to the other and if it is greater (or less),

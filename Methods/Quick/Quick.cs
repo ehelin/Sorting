@@ -15,10 +15,14 @@ namespace Methods.Quick
         int pivotVal = 0;
         int upIndex = 0;
         int downIndex = 0;
+        int upVal = 0;
+        int downVal = 0;
 
         public Quick()
         {
-            numbersToSort = PopulateNumbers();
+            //TODO - works with descending, but not random...fix
+            //numbersToSort = PopulateNumbersDescending();
+            numbersToSort = PopulateNumbersRandom();
         }
 
         public void Run(bool increasing)
@@ -37,46 +41,61 @@ namespace Methods.Quick
         private void RunQuick(bool increasing)
         {
             SetInitialValues();
-            SetPartition();
+            QuickSort();
         }
 
-        private void SetPartition()
+        private void QuickSort()
         {
             while(upIndex <= downIndex)
             {
-                int tmpVal = 0;
+                bool upFnd = false;
+                bool downFnd = false;
 
-                if (numbersToSort[upIndex] > pivotVal)
+                while(!upFnd || !downFnd)
                 {
-                    tmpVal = numbersToSort[upIndex] ;
-                    numbersToSort[upIndex] = numbersToSort[downIndex];
-                    numbersToSort[downIndex] = tmpVal;
+                    upVal = numbersToSort[upIndex];
+                    downVal = numbersToSort[downIndex];
+
+                    if (upVal > pivotVal)
+                        upFnd = true;
+                    else
+                        upIndex++;
+
+                    if (downVal <= pivotVal)
+                        downFnd = true;
+                    else
+                        downIndex--;
+
+                    if (upFnd && downFnd)
+                    {
+                        numbersToSort[upIndex] = downVal;
+                        numbersToSort[downIndex] = upVal;
+                        break;
+                    }
+                    else
+                    {
+                        if (downIndex <= 0)
+                            break;
+
+                        if (upIndex >= (numbersToSort.Count()-1))
+                            break;
+                    
+                        if (upIndex > downIndex)
+                            break;
+                    }
                 }
-                else
-                    upIndex++;
-
-                if (numbersToSort[downIndex] < pivotVal)
-                {
-                    tmpVal = numbersToSort[upIndex] ;
-                    numbersToSort[upIndex] = numbersToSort[downIndex];
-                    numbersToSort[downIndex] = tmpVal;
-                }
-                else
-                    downIndex--;
-
-                this.DisplayNumbersToSort();
-
-                upIndex++;
-                downIndex++;
+                
+                DisplayNumbersToSort();
             }
         }
 
         private void SetInitialValues()
         {
-            int maxIndex = numbersToSort.Count()-1;
+            int maxIndex = numbersToSort.Count();
             pivotIndex = maxIndex/2;
+            pivotVal = numbersToSort[pivotIndex];
             upIndex = 0;
-            downIndex = maxIndex;
+            downIndex = maxIndex-1;
         }
     }
 }
