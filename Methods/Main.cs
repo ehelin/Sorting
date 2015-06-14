@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 using Methods.Bubble;
 using Methods.Quick;
+using Methods;
+using Methods.ComparableIfc;
 
 namespace Methods
 {
@@ -14,7 +16,8 @@ namespace Methods
         public void Run()
         {
             //RunBubbleSort();  
-            RunQuickSort();         
+            //RunQuickSort();  
+            RunComparableIfcImplementation();
         }
 
         private void RunBubbleSort()
@@ -29,6 +32,11 @@ namespace Methods
         {
             Quick.Quick q = new Quick.Quick();
             q.Run(true);
+        }          
+        private void RunComparableIfcImplementation()
+        {
+            NumberDriver nd = new NumberDriver();
+            nd.Run();
         }          
     }
 }
