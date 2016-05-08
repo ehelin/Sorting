@@ -17,7 +17,16 @@ namespace Methods
         {
             //RunBubbleSort();  
             //RunQuickSort();  
-            RunComparableIfcImplementation();
+            //RunComparableIfcImplementation();
+            RunInsertionSort();
+        }
+        private void RunInsertionSort()
+        {
+            Insertion.Insertion i = new Insertion.Insertion();
+            i.Run(true);
+
+            //b = new Bubble.Bubble();
+            //b.Run(false);
         }
 
         private void RunBubbleSort()

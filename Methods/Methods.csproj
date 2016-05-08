@@ -42,6 +42,7 @@
     <Compile Include="Bubble\Bubble.cs" />
     <Compile Include="ComparableIfc\Number.cs" />
     <Compile Include="ComparableIfc\NumberDriver.cs" />
+    <Compile Include="Insertion\Insertion.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Quick\Quick.cs" />

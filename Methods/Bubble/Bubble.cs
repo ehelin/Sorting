@@ -46,7 +46,7 @@ namespace Methods.Bubble
             
             SetMsgStart(increasing, "Starting");
 
-            while(outerCtr <= numbersToSort.Count())
+            while(outerCtr <= numbersToSort.Count())  
             {
                 ctr = 0;
 
